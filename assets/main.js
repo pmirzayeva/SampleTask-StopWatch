@@ -28,51 +28,42 @@ const updateDisplay = () => {
 };
 
 const play = () => {
-  if (!isPlay && !isReset) {
-    playBtn.innerHTML = 'Pause';
-    outerSquare.classList.add("animation-bg");
-
-    const updateHourMinute = () => {
-      if (minCounter === 59) {
-        minCounter = -1;
-        hourCounter++;
-      }
-      minCounter++;
-      updateDisplay();
-    };
-
-    hour = setInterval(updateHourMinute, 60 * 1000);
-
-    sec = setInterval(() => {
-      if (secCounter === 59) {
-        secCounter = -1;
-        updateHourMinute();
-      }
-      secCounter++;
-      updateDisplay();
-    }, 1000);
-
-    centiSec = setInterval(() => {
-      if (centiCounter === 99) {
-        centiCounter = -1;
-      }
-      centiCounter++;
-      updateDisplay();
-    }, 10);
-
-    isPlay = true;
-    isReset = true;
-  } else {
-    playBtn.innerHTML = 'Play';
-    clearInterval(hour);
-    clearInterval(sec);
-    clearInterval(centiSec);
-    isPlay = false;
-    isReset = false;
-    outerSquare.classList.remove("animation-bg");
-  }
-  toggleButton();
-};
+    if (!isPlay && !isReset) {
+      playBtn.innerHTML = 'Pause';
+      outerSquare.classList.add("animation-bg");
+  
+      // Every 10 milliseconds
+      centiSec = setInterval(() => {
+        if (centiCounter === 99) {
+          centiCounter = 0;
+          if (secCounter === 59) {
+            secCounter = 0;
+            if (minCounter === 59) {
+              minCounter = 0;
+              hourCounter++;
+            } else {
+              minCounter++;
+            }
+          } else {
+            secCounter++;
+          }
+        } else {
+          centiCounter++;
+        }
+        updateDisplay();
+      }, 10);
+  
+      isPlay = true;
+      isReset = true;
+    } else {
+      playBtn.innerHTML = 'Play';
+      clearInterval(centiSec);
+      isPlay = false;
+      isReset = false;
+      outerSquare.classList.remove("animation-bg");
+    }
+    toggleButton();
+  };
 
 const reset = () => {
   isReset = true;
