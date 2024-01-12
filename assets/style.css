@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
 }
 
 body{
@@ -25,6 +26,24 @@ body{
     align-items: center;
 }
 
+.animation-bg{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background-size: 40% 40%;
+    animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
 .inner_square{
     width: 345px;
     height: 145px;
@@ -41,7 +60,7 @@ body{
     font-size: 50px;
 }
 
-.hour{
+.hours{
     font-size: 47px;
 }
 
@@ -50,7 +69,11 @@ body{
 }
 
 .second{
-    font-size: 37px;
+    font-size: 47px;
+}
+
+.msecond{
+    font-size: 27px;
 }
 
 .button_wrapper{
@@ -107,23 +130,27 @@ body{
     margin-left:30px;
 }
 
-.clearBtn{
+#clearBtn{
     display: block;
-    /* position: fixed; */
-    bottom: 10px;
-    top: 10px;
-    left: 90%;
-    transform: translate(100%);
+    position: fixed;
+    z-index: 9999;
+    bottom: 100px;
+    left: 50%;
+    transform: translate(-50%);
     width: 120px;
     padding: 10px 0;
     border-radius: 70px;
     background-color: rgba(7, 1, 1, 0.45);
-    border:1px solid rgb(4, 0, 255);
+    border:1px solid red;
     color: white;
 }
 
-.clearBtn:hover{
+#clearBtn:hover{
     cursor: pointer;
     background-color: red;
     border: none;
+}
+
+.hidden{
+    visibility: hidden;
 }

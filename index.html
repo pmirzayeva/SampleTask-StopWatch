@@ -12,42 +12,24 @@
     <div class="watch">
         <div class="outer_square">
             <div class="inner_square">
-                <span class="text hour">01 :</span>
-                <span class="text minute">&nbsp;45 :</span>
-                <span class="text second">&nbsp;44</span>
+                <span class="text hours"> 00 :</span>
+                <span class="text minute"> &nbsp; 00 :</span>
+                <span class="text second"> &nbsp; 00 : </span>
+                <span class="text msecond"> &nbsp; 00</span>
             </div>
 
         </div>
         <div class="button_wrapper">
-            <button class="button">Reset</button>
-            <button class="button">Play</button>
-            <button class="button">Lap</button>
+            <button id="resetBtn" class="button hidden">Reset</button>
+            <button id="playBtn" class="button">Play</button>
+            <button id="lapBtn" class="button hidden">Lap</button>
         </div>
         <ul class="laps">
-            <li class="lap_item">
-                <span class="timestamp">01 : 43 : 34</span>
-            </li>
-            <li class="lap_item">
-                <span class="timestamp">01 : 43 : 34</span>
-            </li>
-            <li class="lap_item">
-                <span class="timestamp">01 : 43 : 34</span>
-            </li>
-            <li class="lap_item">
-                <span class="timestamp">01 : 43 : 34</span>
-            </li>
-            <li class="lap_item">
-                <span class="timestamp">01 : 43 : 34</span>
-            </li>
-            <li class="lap_item">
-                <span class="timestamp">01 : 43 : 34</span>
-            </li>
-            <li class="lap_item">
-                <span class="timestamp">01 : 43 : 34</span>
-            </li>
-            <button class="clearBtn"><i class='bx bx-trash' ></i></button>
+            <button id="clearBtn" class="hidden"><i class='bx bx-trash' ></i></button>
         </ul>
     </div>
     </div>
+
+    <script src="./assets/main.js"></script>
 </body>
 </html>
