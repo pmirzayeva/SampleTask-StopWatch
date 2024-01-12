@@ -50,7 +50,7 @@ body{
 }
 
 .second{
-    font-size: 39px;
+    font-size: 37px;
 }
 
 .button_wrapper{
@@ -75,11 +75,12 @@ body{
     background-color:black;
     color: rgb(13, 0, 255);
     font-weight: bold;
+    border: none;
 }
 
 .laps{
     width: 350px;
-    height: 200px;
+    height: 340px;
     list-style: none;
     color: white;
     overflow: auto;
@@ -89,7 +90,6 @@ body{
 
 .laps::-webkit-scrollbar{
     display: none;
-
 }
 
 .lap_item{
@@ -97,8 +97,8 @@ body{
     width: 100%;
     padding: 10px;
     text-align: center;
-    border: 1px solid #444;
-    border-radius: 40px;
+    border: 0.5px solid #444444f9;
+    border-radius: 50px;
     margin-bottom: 15px;
 }
 
@@ -112,13 +112,18 @@ body{
     /* position: fixed; */
     bottom: 10px;
     top: 10px;
-    left: 50%;
+    left: 90%;
     transform: translate(100%);
     width: 120px;
     padding: 10px 0;
-    border-radius: 50px;
-    background-color: rgba(126, 0, 0, 0.53);
-    border:1px;
-    color: rgb(255, 255, 255);
+    border-radius: 70px;
+    background-color: rgba(7, 1, 1, 0.45);
+    border:1px solid rgb(4, 0, 255);
+    color: white;
+}
+
+.clearBtn:hover{
     cursor: pointer;
+    background-color: red;
+    border: none;
 }
